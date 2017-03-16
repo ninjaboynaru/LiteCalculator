@@ -1,0 +1,75 @@
+@font-face {
+	font-family:"Monofur";
+	src: url("monof55.ttf"); /*Local copy in t*/
+}
+/*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
+body {
+	background-color:#33384F;
+}
+
+#Title {
+	margin:0;
+	padding: 5% 0 0 3%;
+	font-weight:900;
+	font-size:1.2em;
+	font-family:Consolas;
+	color:gray;
+}
+
+#Calculator {
+	width:25%;
+	height:455px;
+	margin:55px auto;
+	
+	background-color: white;
+	border-radius:15px;
+	box-shadow:0 0 100px 1px black;
+}
+/*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
+#Screen {
+	height:15%;
+	padding:0 5%;
+	margin: 0 1%;
+	background-color:#33384F;
+	color:#15D7FE;
+	
+	text-align:right;
+	font-size:2.6em;
+	font-family:Monofur;
+	
+	border-radius:10px;
+	text-shadow: 0 0 5px #00A9C9;
+	box-shadow:inset 0 0 25px 5px #171C36;
+}
+#Screen * {
+	margin:0;
+}
+#Equation {
+	font-size:50%;
+}
+/*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
+.Row {
+	height:14%
+}
+button.Regular {
+	float:left;
+	width:25%;
+	height:100%;
+	font-size:1.5em;
+	
+	text-align:center;
+	font-family:Monofur;
+	background-color:white;
+	border-style:none;
+}
+
+button.Regular:active {
+	border-style:solid;
+	border-radius:20%;
+}
+
+
+
