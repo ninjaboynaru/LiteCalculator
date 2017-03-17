@@ -1,6 +1,7 @@
 var lastEntry = "";
 var equation = "";
 var decimalInLastEntry = false;
+var maxEntrySize = 8;
 
 
 window.onload = GeneralSetup;
@@ -8,24 +9,20 @@ function GeneralSetup()
 {
 	document.onkeyup = function(event){ProcessInput(event.key)};
 	$(".Regular").focus(function(){this.blur()} );
-	//Prevent focus so enter key does not toggle buttons
 	
 	var buttons = document.getElementsByTagName("button");
 	for(var i = 0; i < buttons.length; i++)
 	{
-		// "this" refers to the specific button making the call
 		buttons[i].onclick = function(){ProcessInput(this.value)};
 	}
 }
 
 
 function ProcessInput(input)
-{
-	console.log("Input: " + input + " :received");
-	
-	//Was the last entered input a number
+{	
 	if(isNaN(input) == false)
 	{
+		if(lastEntry.length >= maxEntrySize){return;}
 		if(IsOperator(lastEntry) )
 		{
 			equation += lastEntry;
@@ -38,6 +35,7 @@ function ProcessInput(input)
 	}
 	else if(input === ".")
 	{
+		if(lastEntry.length >= maxEntrySize){return;}
 		if(IsOperator(lastEntry) )
 		{
 			equation += lastEntry;
@@ -84,8 +82,14 @@ function EvaluateEquation()
 {
 	if(isNaN(equation) && IsOperator(lastEntry) == false && lastEntry !== "0.")
 	{
-		lastEntry = eval(equation + lastEntry);
+		lastEntry = Round(eval(equation + lastEntry), 4) + "";
 		equation = "";
+		if(lastEntry.length >= maxEntrySize)
+		{
+			console.log("LOVER");
+			lastEntry = Number(lastEntry).toExponential(4);
+			return;
+		}
 		console.log("Equation evaluated to: " + lastEntry);
 	}
 }
@@ -106,5 +110,10 @@ function IsOperator(value)
 		return true;
 	}
 	return false;
+}
+
+function Round(value, decimals) 
+{
+  return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
 

@@ -1,11 +1,13 @@
+/*Mostly responsive design that scales withs creen size. Still gets squashed on small screens*/
+
 @font-face {
 	font-family:"Monofur";
-	src: url("monof55.ttf"); /*Local copy in t*/
+	src: url("monof55.ttf"); /*Local copy in css folder*/
 }
 /*--------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------*/
 body {
-	background-color:#33384F;
+	background-color:#151B33;
 }
 
 #Title {
@@ -18,9 +20,10 @@ body {
 }
 
 #Calculator {
-	width:25%;
-	height:455px;
+	width:27%;
+	height:500px;
 	margin:55px auto;
+	padding:2% 0.4%;
 	
 	background-color: white;
 	border-radius:15px;
@@ -32,7 +35,7 @@ body {
 	height:15%;
 	padding:0 5%;
 	margin: 0 1%;
-	background-color:#33384F;
+	background-color:#151B33;
 	color:#15D7FE;
 	
 	text-align:right;
@@ -68,7 +71,14 @@ button.Regular {
 
 button.Regular:active {
 	border-style:solid;
-	border-radius:20%;
+	border-radius:100%;
+	color:orange;
+}
+
+#Credits {
+	font-family:Consolas;
+	text-align:center;
+	color:white;
 }
 
 
