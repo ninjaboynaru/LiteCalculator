@@ -1,3 +1,4 @@
+
 var lastEntry = "";
 var equation = "";
 var decimalInLastEntry = false;
@@ -17,6 +18,7 @@ function GeneralSetup()
 	}
 }
 
+/*=================================================================================*/
 
 function ProcessInput(input)
 {	
@@ -93,6 +95,8 @@ function EvaluateEquation()
 		console.log("Equation evaluated to: " + lastEntry);
 	}
 }
+
+/*=================================================================================*/
 
 function UpdateUI()
 {
